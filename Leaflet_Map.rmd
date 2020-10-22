@@ -1,0 +1,24 @@
+---
+title: "Leaflet Map"
+author: "Agniv Saikia"
+date: "22 October 2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Creating a Leaflet Map
+Create a leaflet map object.
+```{r cars}
+library(leaflet)
+new_map <- leaflet() %>% addTiles()
+
+```
+
+Add the marker to the map and display the map.
+```{r}
+MAHEPopup <- c("<a href= 'https://manipal.edu/mu.html' >Manipal Academy of Higher Education<br><img src='./data/MIT.jpg' width='410' height='132'  alt='MAHE' title='MAHE'></a>")
+new_map = addMarkers(new_map,lat=13.353448, lng=74.784900, popup = MAHEPopup)
+new_map
+```
